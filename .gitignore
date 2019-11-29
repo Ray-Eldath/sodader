@@ -1,0 +1,23 @@
+## Vue
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_componets
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+## Yarn
+yarn.lock
+yarn-error.log
+
+## Parcel
+dist
+.cache
