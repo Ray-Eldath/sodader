@@ -1,27 +1,27 @@
 {
-  "name": "the-messenger",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Ray-Eldath <ray.eldath@outlook.com>",
-  "license": "Apache-2.0",
-  "scripts": {
-    "build": "rm -r dist && parcel build index.html",
-    "dev": "parcel serve index.html"
-  },
-  "dependencies": {
-    "less": "^3.10.3",
-    "particlesjs": "^2.2.3",
-    "typed.js": "^2.0.11",
-    "vue": "^2.6.10",
-    "vue-hot-reload-api": "^2.3.4",
-    "vue-router": "^3.1.3",
-    "vue2-animate": "^2.1.2"
-  },
-  "devDependencies": {
-    "@vue/component-compiler-utils": "^3.0.2",
-    "cssnano": "^4.1.10",
-    "sass": "^1.23.7",
-    "stylus": "^0.54.7",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "name": "the-messenger",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Ray-Eldath <ray.eldath@outlook.com>",
+    "license": "Apache-2.0",
+    "scripts": {
+        "build": "rm -r dist && parcel build index.html",
+        "dev": "parcel serve index.html"
+    },
+    "dependencies": {
+        "@primer/octicons": "^9.3.1",
+        "particlesjs": "^2.2.3",
+        "typed.js": "^2.0.11",
+        "vue": "^2.6.10",
+        "vue-hot-reload-api": "^2.3.4",
+        "vue-router": "^3.1.3",
+        "vue-tippy": "^4.1.0",
+        "vue2-animate": "^2.1.2"
+    },
+    "devDependencies": {
+        "@vue/component-compiler-utils": "^3.0.2",
+        "cssnano": "^4.1.10",
+        "sass": "^1.23.7",
+        "vue-template-compiler": "^2.6.10"
+    }
 }
