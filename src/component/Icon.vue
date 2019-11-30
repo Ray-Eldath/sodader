@@ -1,5 +1,14 @@
 <template>
-    <div class="icon" :class="iconClass" v-html="iconContent"></div>
+    <a
+        v-if="href"
+        :href="href"
+        class="icon"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <div :class="iconClass" v-html="iconContent"></div>
+    </a>
+    <div v-else class="icon" :class="iconClass" v-html="iconContent"></div>
 </template>
 
 <script>
@@ -17,13 +26,13 @@ export default {
             type: String,
             required: true
         },
-        width: {
+        size: {
             type: Number,
             default: 16
         },
-        height: {
-            type: Number,
-            default: 16
+        href: {
+            type: String,
+            required: false
         }
     },
     computed: {
@@ -34,10 +43,10 @@ export default {
             if (this.type == "octicons") {
                 let d = octicons[this.name];
                 if (d != undefined)
-                    return d.toSVG({ width: this.width, height: this.height });
+                    return d.toSVG({ width: this.size, height: this.size });
                 else this.console404();
             } else if (this.type == "iconfont") {
-                let d = iconfont(this.name, this.width, this.height);
+                let d = iconfont(this.name, this.size, this.size);
                 if (d != undefined) return d;
                 else this.console404();
             }

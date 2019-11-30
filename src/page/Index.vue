@@ -1,16 +1,17 @@
 <template>
-    <div class="container flex-column">
-        <div class="header">
-            <div class="avatar flex-column">
-                <img src="../../assert/avatar.jpeg" alt="Ray Eldath" />
+    <div class="page" style="height: 100%">
+        <div class="container flex-column">
+            <div class="header">
+                <div class="avatar flex-column">
+                    <img src="../../assert/avatar.jpeg" alt="Ray Eldath" />
 
-                <span class="name">Ray Eldath</span>
-            </div>
+                    <span class="name">Ray Eldath</span>
+                </div>
 
-            <div id="typing" class="flex-column">
-                <div id="_typed">
-                    <!-- prettier-ignore -->
-                    <div id="_typed-strings">
+                <div id="typing" class="flex-column">
+                    <div id="_typed">
+                        <!-- prettier-ignore -->
+                        <div id="_typed-strings">
                         <p></p> <!-- 启动闪烁效果 -->
                         <p>^2000一个最笨的大笨蛋^600</p>
                         <p>一个<strike>理性</strike>浪漫主义者<i>（讽刺地）</i>^1000</p>
@@ -26,49 +27,91 @@
                         <p><strong>不会数学</strong>但又讽刺地学了<u>理工科</u>^1500</p>
                         <p><span style="color: red"><s><strong>^3000一个死于萨乌达德的人</strong></s></span>^2000</p>
                     </div>
-                    <span></span>
-                </div>
+                        <span></span>
+                    </div>
 
-                <span class="counter">
-                    <template v-if="!descriptionEnde">
-                        {{ description.total }} / {{ description.now }}
-                    </template>
-                    <template v-else>
-                        ende.
-                    </template>
-                </span>
-            </div>
-        </div>
-        <div class="routes">
-            <icon content="Ray-Eldath" v-tippy name="mark-github"></icon>
-            <icon name="mail-read"></icon>
-            <icon type="iconfont" name="zhihu"></icon>
-        </div>
-        <div class="links"></div>
-        <div class="construction">
-            <transition name="fade" leave-active-class="fade-leave">
-                <div
-                    v-if="descriptionEnde"
-                    style="margin-top: 0.5em; font-size: 1.5em; font-weight: bold; font-family: 'Noto Serif SC', serif"
-                    class="flex-column"
-                >
-                    <span>余下组件仍在编写...</span>
-                    <span style="margin-top: 0.5em">
-                        期待完成后能见到你。
+                    <span class="counter">
+                        <template v-if="!descriptionEnde">
+                            {{ description.total }} / {{ description.now }}
+                        </template>
+                        <template v-else>
+                            ende.
+                        </template>
                     </span>
                 </div>
-            </transition>
+            </div>
+            <div class="construction">
+                <transition name="fade" leave-active-class="fade-leave">
+                    <div
+                        v-if="descriptionEnde"
+                        style="margin-top: 0.5em; font-size: 1.5em; font-weight: bold; font-family: 'Noto Serif SC', serif"
+                        class="flex-column"
+                    >
+                        <span>余下组件仍在编写...</span>
+                        <span style="margin-top: 0.5em">
+                            期待完成后能见到你。
+                        </span>
+                    </div>
+                </transition>
+            </div>
+            <div class="links"></div>
+            <div class="routes">
+                <icon
+                    content="我的 GitHub"
+                    v-tippy
+                    href="https://github.com/Ray-Eldath"
+                    name="mark-github"
+                    :size="25"
+                ></icon>
+                <icon
+                    content="我的邮箱"
+                    v-tippy
+                    href="mailto:ray-eldath@outlook.com"
+                    name="mail-read"
+                    :size="25"
+                ></icon>
+                <icon
+                    content="我的知乎"
+                    v-tippy
+                    href="https://zhihu.com/people/eldath-ray"
+                    type="iconfont"
+                    name="zhihu"
+                    :size="25"
+                ></icon>
+            </div>
+            <div id="_particle" style="z-index: -1"><canvas></canvas></div>
         </div>
-        <div id="_particle" style="z-index: -1"><canvas></canvas></div>
+
+        <div class="corner">
+            <p>©. {{ years }}. Ray Eldath.</p>
+        </div>
     </div>
 </template>
 
 <style lang="sass" scoped>
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700&display=swap&subset=chinese-simplified')
 
-.container
+.page .corner
+    position: fixed
+    left: 0.2rem
+    bottom: -0.35rem
+    opacity: 0.2
+    font-size: 0.55em
+
+.page .container
     height: 100%
     
+    .routes
+        position: absolute
+        bottom: 0.8em
+        opacity: 0.34
+
+        .icon
+            margin-left: 24px
+
+            &:first-child
+                margin-left: 0
+
     .header
         padding: 1em 0 1em 0
         width: 100%
@@ -150,6 +193,11 @@ export default {
     computed: {
         descriptionEnde() {
             return this.description.total <= this.description.now;
+        },
+        years() {
+            let now = new Date().getFullYear();
+            if (now === 2019) return `2019`;
+            else return `2019 - ${now}`;
         }
     },
     data() {
@@ -157,6 +205,11 @@ export default {
             description: {
                 total: -1, // 纠正空p标签
                 now: -1
+            },
+            config: {
+                routesTippy: {
+                    placement: "bottom"
+                }
             }
         };
     }
