@@ -13,7 +13,7 @@
                     <div id="_typed-strings">
                         <p></p> <!-- 启动闪烁效果 -->
                         <p>^2000一个最笨的大笨蛋^600</p>
-                        <!-- <p>一个<strike>理性</strike>浪漫主义者<i>（讽刺地）</i>^1000</p>
+                        <p>一个<strike>理性</strike>浪漫主义者<i>（讽刺地）</i>^1000</p>
                         <p>一个<u>半吊子</u>幻迷^500</p>
                         <p>一个垃圾鼓手^400</p>
                         <p>一个<span style="color: red"><strong>贫下中农</strong></span>^1000</p>
@@ -24,7 +24,7 @@
                         <p><strong>没有独显</strong>但又讽刺地想玩<u>奇异人生</u>^1500</p>
                         <p><strong>毫无才智</strong>但又讽刺地研究<u>计算机</u>^1500</p>
                         <p><strong>不会数学</strong>但又讽刺地学了<u>理工科</u>^1500</p>
-                        <p><span style="color: red"><s><strong>^3000一个死于萨乌达德的人</strong></s></span>^2000</p> -->
+                        <p><span style="color: red"><s><strong>^3000一个死于萨乌达德的人</strong></s></span>^2000</p>
                     </div>
                     <span></span>
                 </div>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="routes">
-            <icon name="mark-github"></icon>
+            <icon content="Ray-Eldath" v-tippy name="mark-github"></icon>
             <icon name="mail-read"></icon>
             <icon type="iconfont" name="zhihu"></icon>
         </div>
