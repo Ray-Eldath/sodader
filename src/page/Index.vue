@@ -104,11 +104,15 @@
     .routes
         position: absolute
         bottom: 0.8em
-        opacity: 0.34
 
         .icon
             margin-left: 24px
+            opacity: 0.4
 
+            &:hover
+                opacity: 0.7
+                transition: 500ms ease
+            
             &:first-child
                 margin-left: 0
 
