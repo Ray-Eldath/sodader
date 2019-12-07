@@ -13,7 +13,7 @@
                         <!-- prettier-ignore -->
                         <div id="_typed-strings">
                         <p></p> <!-- 启动闪烁效果 -->
-                        <p>^2000一个最笨的大笨蛋^600</p>
+                        <p>^500一个最笨的大笨蛋^600</p>
                         <p>一个<strike>理性</strike>浪漫主义者<i>（讽刺地）</i>^1000</p>
                         <p>一个<u>半吊子</u>幻迷^500</p>
                         <p>一个垃圾鼓手^400</p>
@@ -40,24 +40,29 @@
                     </span>
                 </div>
             </div>
+            <div class="buttons">
+                <a class="button colored" href="/timeline">时间线</a>
+                <a class="button" href="/articles">文章</a>
+                <a class="button" href="/nowhere">碎碎念</a>
+                <a class="button" href="/about">关于 / 朋友们</a>
+            </div>
             <div class="construction">
                 <transition name="fade" leave-active-class="fade-leave">
                     <div
                         v-if="descriptionEnde"
-                        style="margin-top: 0.5em; font-size: 1.5em; font-weight: bold; font-family: 'Noto Serif SC', serif"
+                        style="margin-top: 1.5em; font-size: 1.5em; font-weight: bold; font-family: 'Noto Serif SC', serif"
                         class="flex-column"
                     >
                         <span>余下组件仍在编写...</span>
-                        <span style="margin-top: 0.5em">
+                        <span style="margin-top: 0.4em">
                             期待完成后能见到你。
                         </span>
                     </div>
                 </transition>
             </div>
-            <div class="links"></div>
             <div class="routes">
                 <icon
-                    content="我的 GitHub"
+                    content="我的GitHub"
                     v-tippy
                     href="https://github.com/Ray-Eldath"
                     name="mark-github"
@@ -91,16 +96,35 @@
 <style lang="sass" scoped>
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700&display=swap&subset=chinese-simplified')
 
-.page .corner
-    position: fixed
-    left: 0.2rem
-    bottom: -0.35rem
-    opacity: 0.2
-    font-size: 0.55em
-
 .page .container
     height: 100%
     
+    @mixin fade-transition
+        transition: 600ms ease-out
+
+        &:hover
+            opacity: 0.8
+
+    .buttons
+        width: 12em
+        border-radius: 3px
+        overflow: hidden
+        @extend .flex-column
+
+        .button
+            width: 100%
+            height: 2em
+            line-height: 2em
+            text-decoration: none
+            text-align: center
+            color: white
+            background: rgb(46, 46, 46)
+            opacity: 1
+            @include fade-transition
+
+            &.colored
+                background: rgb(38, 138, 181)
+
     .routes
         position: absolute
         bottom: 0.8em
@@ -154,6 +178,13 @@
 .flex-column
     @extend .flex
     flex-direction: column
+
+.page .corner
+    position: fixed
+    left: 0.2rem
+    bottom: -0.35rem
+    opacity: 0.3
+    font-size: 0.55em
 </style>
 
 <style lang="sass">
