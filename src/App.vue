@@ -1,14 +1,14 @@
 <template>
-    <router-view />
+    <router-view/>
 </template>
 
 <style lang="sass">
-body
-    font-family: 'Noto Sans SC', sans-serif
+    body
+        font-family: 'Noto Sans SC', sans-serif
 
-.tippy-popper
-    .tippy-tooltip
-        padding: .36rem .4rem
-        line-height: 1
-        font-size: .8rem
+    .tippy-popper
+        .tippy-tooltip
+            padding: .36rem .4rem
+            line-height: 1
+            font-size: .8rem
 </style>

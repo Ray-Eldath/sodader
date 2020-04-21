@@ -4,7 +4,7 @@ import VueTippy from "vue-tippy";
 
 import GlobalComponent from "./util/globalComponent";
 
-require("vue2-animate/dist/vue2-animate.min.css");
+import "vue2-animate/dist/vue2-animate.min.css";
 import "tippy.js/themes/light.css";
 import "tippy.js/themes/light-border.css";
 import "tippy.js/themes/google.css";
@@ -18,6 +18,7 @@ Vue.use(VueTippy, {
 });
 
 import Index from "./page/Index";
+
 const Timeline = () => import("./page/Timeline");
 
 const router = {
