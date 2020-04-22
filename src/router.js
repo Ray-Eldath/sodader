@@ -20,20 +20,28 @@ Vue.use(VueTippy, {
 import Index from "./page/Index";
 
 const Timeline = () => import("./page/Timeline");
+const Articles = () => import("./page/Articles");
 
 const router = {
     routes: [
         {
             path: "/",
-            name: "Index",
-            component: Index
+            name: "主页",
+            component: Index,
+            meta: { plain: true }
         },
         {
             path: "/timeline",
-            name: "Timeline",
+            name: "时间线",
             component: Timeline
+        },
+        {
+            path: "/articles",
+            name: "文章",
+            component: Articles
         }
-    ]
+    ],
+    mode: "history"
 };
 
 export default new Router(router);

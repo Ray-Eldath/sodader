@@ -14,7 +14,7 @@
                         <div id="_typed-strings">
                             <p></p> <!-- 启动闪烁效果 -->
                             <p>^500一个最笨的大笨蛋^600</p>
-                            <p>一个<del>理性</del>浪漫主义者<i>（讽刺地）</i>^1000</p>
+                            <p>一个<del>理性</del>浪漫主义者^1000</p>
                             <p>一个<u>半吊子</u>幻迷^500</p>
                             <p>一个垃圾鼓手^400</p>
                             <p>一个<span style="color: red"><strong>贫下中农</strong></span>^1000</p>
@@ -23,10 +23,6 @@
                             </p>
                             <p>^10在<u>不喜欢的大学</u>的<u>不喜欢的专业</u>里<span style="color: red"><strong>挂科</strong></span>^1000
                             </p>
-                            <p><strong>没有相机</strong>但又讽刺地喜欢<u>建筑摄影</u>^1500</p>
-                            <p><strong>没有独显</strong>但又讽刺地想玩<u>奇异人生</u>^1500</p>
-                            <p><strong>毫无才智</strong>但又讽刺地研究<u>计算机</u>^1500</p>
-                            <p><strong>不会数学</strong>但又讽刺地学了<u>理工科</u>^1500</p>
                             <p><span style="color: red"><s><strong>^3000一个死于萨乌达德的人</strong></s></span>^2000</p>
                         </div>
                         <!-- @formatter:on -->
@@ -100,6 +96,7 @@
 
 <style lang="sass" scoped>
     @import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC:400,700&display=swap&subset=chinese-simplified')
+    @import "src/style/theme.sass"
 
     .page .container
         height: 100%
@@ -136,10 +133,10 @@
             .icon
                 margin-left: 24px
                 opacity: 0.4
+                transition: 500ms ease
 
                 &:hover
                     opacity: 0.7
-                    transition: 500ms ease
 
                 &:first-child
                     margin-left: 0
@@ -186,9 +183,9 @@
     .page .corner
         position: fixed
         left: 0.2rem
-        bottom: -0.35rem
+        bottom: -0.7rem
         opacity: 0.3
-        font-size: 0.55em
+        font-size: .8em
 </style>
 
 <style lang="sass">
