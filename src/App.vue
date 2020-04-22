@@ -12,10 +12,12 @@
             </div>
 
             <div class="content">
-
                 <FadeTransition>
-                    <router-view></router-view>
+                    <router-view class="view"></router-view>
                 </FadeTransition>
+
+                <div class="bottom-line"></div>
+                <div style="text-align: center; padding: 10px 0; color: rgba(0, 0, 0, 0.3)">🎇 ENDE~</div>
             </div>
         </div>
 
@@ -60,11 +62,15 @@
 
             .content
                 flex-grow: 1
-                padding: 1rem 2rem 1rem 2rem
+                padding: 1rem 2rem
                 background: white
-                border: solid 20px $primary-color
+                border: solid 20px $dark-color
                 border-top: 0
                 border-bottom: 0
+
+                .bottom-line
+                    padding-top: 20px
+                    border-bottom: solid 1px rgba($dark-color, 0.2)
 </style>
 
 <style lang="sass">

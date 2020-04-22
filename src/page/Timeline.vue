@@ -1,20 +1,29 @@
 <template>
     <div id="timeline">
-        <div v-for="i in timeline" :key="i.id">
+        <template v-for="i in timeline">
             <div class="block" v-if="i.type === 0">
                 <Article
-                        :id="i.id"
-                        :title="i.title"
-                        :date="i.date"
-                        :abstract="i.abstract"
+                    :id="i.id"
+                    :title="i.title"
+                    :date="i.date"
+                    :abstract="i.abstract"
                 />
             </div>
             <div class="block" v-else-if="i.type === 1">
                 <Hitokoto :content="i.content" :source="i.source"/>
             </div>
-        </div>
+        </template>
     </div>
 </template>
+
+<style lang="sass" scoped>
+    #timeline
+        .block
+            margin-top: 1em
+
+            &:first-child
+                margin-top: 0
+</style>
 
 <script>
     import Article from "../component/TimelineArticle";
@@ -30,5 +39,3 @@
         components: { Article, Hitokoto }
     };
 </script>
-
-<style lang="less" scoped></style>

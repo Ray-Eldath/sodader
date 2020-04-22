@@ -1,6 +1,5 @@
 <template>
     <transition
-        :duration="{ enter: 300, leave: 400 }"
         name="custom-fade"
         mode="out-in"
         @beforeLeave="beforeLeave"
@@ -10,6 +9,7 @@
         <slot></slot>
     </transition>
 </template>
+
 <style>
     .custom-fade-enter-active {
         transition: opacity 500ms linear;
@@ -46,7 +46,6 @@
             afterEnter(element) {
                 element.style.height = "auto";
             }
-        },
-        name: "FadeTransition"
+        }
     };
 </script>
