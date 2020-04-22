@@ -21,6 +21,9 @@
 
 <style lang="sass" scoped>
     @import "src/style/theme.sass"
+    @mixin defaultCursor
+        &:hover
+            cursor: default
 
     .nav
         position: sticky
@@ -33,6 +36,7 @@
             padding: 40px 40px 20px 40px
 
         .header
+            @include defaultCursor
             flex-grow: 1
             color: rgba(black, 1)
             font-size: 50px
@@ -51,6 +55,10 @@
                 .at
                     font-weight: 500
                     opacity: 0.4
+                    transition: 800ms ease
+
+                    &:hover
+                        opacity: 1
 
         .entries
             margin-top: auto
@@ -75,7 +83,8 @@
 
         .delimiter
             margin: 5px
-            color: rgba(black, 0.2)
+            color: rgba(black, 0.25)
+            @include defaultCursor
 </style>
 
 <script>

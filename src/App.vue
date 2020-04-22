@@ -17,7 +17,9 @@
                 </FadeTransition>
 
                 <div class="bottom-line"></div>
-                <div style="text-align: center; padding: 10px 0; color: rgba(0, 0, 0, 0.3)">🎇 ENDE~</div>
+                <div style="text-align: center; color: rgba(0, 0, 0, 0.3)">
+                    <p>🎇 ENDE~ <br/> ©. {{ years }}. Ray Eldath.</p>
+                </div>
             </div>
         </div>
 
@@ -42,6 +44,13 @@
                 maxParticles: 250,
                 minDistance: 60
             });
+        },
+        computed: {
+            years() {
+                let now = new Date().getFullYear();
+                if (now === 2019) return `2019`;
+                else return `2019 - ${now}`;
+            }
         },
         components: { NavBar, FadeTransition }
     };
