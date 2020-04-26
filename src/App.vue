@@ -75,7 +75,6 @@
                 background: white
                 border: solid 20px $dark-color
                 border-top: 0
-                border-bottom: 0
 
                 .bottom-line
                     padding-top: 20px

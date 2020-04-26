@@ -5,14 +5,17 @@
                 <div class="title">未命名 <span class="at">@ Ray Eldath's Blog</span></div>
                 <div class="motto">我仍在找寻存在的意义和价值。</div>
             </div>
-            <div class="entries">
-                <div class="entry" v-for="(route, i) in routes" :key="route.path">
-                    <router-link
-                        class="link"
-                        :to="{ name: route.name }"
-                        :class="{ current: route.name === $route.name} ">{{ route.name }}
-                    </router-link>
-                    <span v-if="i < routes.length - 1" class="delimiter">/</span>
+            <div class="bottom">
+                <div class="box"></div>
+                <div class="entries">
+                    <div class="entry" v-for="(route, i) in routes" :key="route.path">
+                        <router-link
+                            class="link"
+                            :to="{ name: route.name }"
+                            :class="{ current: route.name === $route.name} ">{{ route.name }}
+                        </router-link>
+                        <span v-if="i < routes.length - 1" class="delimiter">/</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,7 +35,7 @@
 
         .box
             display: flex
-            flex-direction: row
+            flex-direction: column
             padding: 40px 40px 20px 40px
 
         .header
@@ -40,7 +43,7 @@
             flex-grow: 1
             color: rgba(black, 1)
             font-size: 50px
-            margin-bottom: 1.6em
+            margin-bottom: 1.5em
 
             .motto
                 text-shadow: rgba(0, 0, 0, 0.14) 1px 1px 5px
@@ -59,6 +62,12 @@
 
                     &:hover
                         opacity: 1
+
+        .bottom
+            display: flex
+
+            .box
+                flex-grow: 1
 
         .entries
             margin-top: auto

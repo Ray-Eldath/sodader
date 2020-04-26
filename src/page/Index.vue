@@ -31,7 +31,7 @@
 
                     <span class="counter">
                         <template v-if="!descriptionEnde">
-                            {{ description.total }} / {{ description.now }}
+                            {{ description.now }} / {{ description.total }}
                         </template>
                         <template v-else>
                             ende.
@@ -42,7 +42,7 @@
             <div class="buttons">
                 <a class="button colored" href="/timeline">时间线</a>
                 <a class="button" href="/articles">文章</a>
-                <a class="button" href="/nowhere">碎碎念</a>
+                <a class="button" href="/nonsense">碎碎念</a>
                 <a class="button" href="/about">关于 / 朋友们</a>
             </div>
             <div class="construction">
